@@ -1,0 +1,13 @@
+service: email-validator
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: python3.9
+
+functions:
+  main:
+    handler: handler.validate
+    events:
+      - http: POST /email/validate
